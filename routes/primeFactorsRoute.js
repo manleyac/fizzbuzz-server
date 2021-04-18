@@ -7,6 +7,12 @@ const router = express.Router();
 //constant sets max value function can process
 const LIMIT = 100000;
 
+// @route   GET primefactors/
+// @desc    Returns message when no parameter is given
+router.get("/", (req,res) => {
+   res.json({ message: "Pass a positive integer less than 100,000 at the end of the route to see its prime factors" });
+})
+
 // @route   GET primefactors/:num
 // @param   Expects an integer
 // @desc    Takes an integer, passes it to primeFactors function and returns array with result
