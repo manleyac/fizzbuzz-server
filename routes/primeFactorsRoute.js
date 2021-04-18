@@ -1,5 +1,6 @@
 const express = require("express");
 const checkInteger = require("../functions/checkInteger");
+const primeFactors = require("../functions/primeFactors");
 
 const router = express.Router();
 
@@ -16,7 +17,7 @@ router.get("/:num", (req, res) => {
     const number = Number(input);
 
     if (checkInteger(number) && number < LIMIT) {
-      const result = number;
+      const result = primeFactors(number);
       res.json({ result: result });
     } else {
       res.json({ message: "Value must be a positive integer less than 100,000" });
