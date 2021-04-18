@@ -7,6 +7,15 @@ const LIMIT = 100000;
 
 const router = express.Router();
 
+// @route   GET fizzbuzz/
+// @desc    Returns message when no parameter is given
+router.get("/", (req, res) => {
+  res.json({
+    message:
+      "Pass a positive integer less than 100,000 at the end of the route to see its result from FizzBuzz",
+  });
+});
+
 // @route   GET fizzbuzz/:num
 // @param   An integer
 // @desc    Takes an integer, passes it to fizzbuzz function and returns result
