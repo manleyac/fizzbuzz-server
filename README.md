@@ -3,7 +3,7 @@
 
 This server has the following route:
 
-/fizzbuzz/:num
+GET /fizzbuzz/:num
 
 Route /fizzbuzz/ accepts a positive integer up to five digits and returns a number or string according to the rules of FizzBuzz.
 This route returns the result in the following JSON format:
