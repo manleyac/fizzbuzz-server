@@ -14,15 +14,35 @@ function fizzbuzz(num) {
   }
 }
 
+//returns true or false if value passed in is a positive integer
+function checkInteger(num) {
+  if (typeof num === "number") {
+    return Number.isInteger(num) && num > 0;
+  } else {
+    return false;
+  }
+}
+
 // @route   GET fizzbuzz/:num
 // @param   An integer
 // @desc    Takes an integer, passes it to fizzbuzz function and returns result
 // @access  Public
 router.get("/:num", (req, res) => {
-  const input = req.params.num;
-  const number = Number(input);
-  const result = fizzbuzz(number);
-  res.json({ result: result });
+  try {
+    const input = req.params.num;
+    const number = Number(input);
+
+    if (checkInteger(number)) {
+      const result = fizzbuzz(number);
+      res.json({ result: result });
+    } else {
+      res.json({
+        message: "Value must be a positive integer less than 100,000",
+      });
+    }
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 module.exports = router;
