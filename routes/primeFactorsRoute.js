@@ -11,7 +11,7 @@ const LIMIT = 100000;
 // @desc    Returns message when no parameter is given
 router.get("/", (req,res) => {
    res.json({ message: "Pass a positive integer less than 100,000 at the end of the route to see its prime factors" });
-})
+});
 
 // @route   GET primefactors/:num
 // @param   Expects an integer
