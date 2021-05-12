@@ -27,3 +27,20 @@ Run the following command to start the server:
 `npm run start`
 
 Server will start listening on port 3000, or another if a PORT environment variable is declared.
+
+
+## Prime Factors Branch
+
+This branch adds the following route:
+
+GET /primefactors/:num
+
+Route /primefactors/ accepts a positive integer up to five digits and returns an array with the prime factors for that number.
+This route returns the result in the following JSON format:
+
+```
+//Ex. for primefactors/12
+{
+   result: [2, 2, 3]
+}
+```
