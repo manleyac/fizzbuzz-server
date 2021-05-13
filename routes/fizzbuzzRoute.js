@@ -29,7 +29,7 @@ router.get("/:num", (req, res) => {
       const result = fizzbuzz(number);
       res.json({ result: result });
     } else {
-      res.json({
+      res.status(500).json({
         message: "Value must be a positive integer less than 100,000",
       });
     }
