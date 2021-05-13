@@ -29,7 +29,7 @@ router.get("/:num", (req, res) => {
       const result = primeFactors(number);
       res.json({ result: result });
     } else {
-      res.status(500).json({
+      res.status(400).json({
         message: "Value must be a positive integer less than 100,000",
       });
     }
