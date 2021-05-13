@@ -9,8 +9,11 @@ const LIMIT = 100000;
 
 // @route   GET primefactors/
 // @desc    Returns message when no parameter is given
-router.get("/", (req,res) => {
-   res.json({ message: "Pass a positive integer less than 100,000 at the end of the route to see its prime factors" });
+router.get("/", (req, res) => {
+  res.json({
+    message:
+      "Pass a positive integer less than 100,000 at the end of the route to see its prime factors",
+  });
 });
 
 // @route   GET primefactors/:num
@@ -26,7 +29,9 @@ router.get("/:num", (req, res) => {
       const result = primeFactors(number);
       res.json({ result: result });
     } else {
-      res.json({ message: "Value must be a positive integer less than 100,000" });
+      res.status(500).json({
+        message: "Value must be a positive integer less than 100,000",
+      });
     }
   } catch (err) {
     console.error(err);
